@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+
+/* 
+  1-9 copied from https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --vw-mobile-max: 375px;
+  --vw-desktop-min: 1440px;
+
+  --dm--elements:  hsl(209, 23%, 22%);
+  --dm-bg:  hsl(207, 26%, 17%);
+  --dm-text: hsl(0,0%,100%);
+
+  --lm--elements:  hsl(0,0%,100%);
+  --lm-text: hsl(200,15%,8%);
+  --lm-input: hsl(0,0%,52%);
+  --lm-bg: hsl(0,0%,98%);
+
+
+  --shadow-color: 280deg 6% 76%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.17),
+    0.4px 0.7px 0.9px -1.2px hsl(var(--shadow-color) / 0.17),
+    0.8px 1.5px 1.9px -2.5px hsl(var(--shadow-color) / 0.17);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.18),
+    0.7px 1.3px 1.7px -0.8px hsl(var(--shadow-color) / 0.18),
+    1.6px 3.2px 4px -1.7px hsl(var(--shadow-color) / 0.18),
+    3.8px 7.5px 9.5px -2.5px hsl(var(--shadow-color) / 0.18);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.16),
+    0.8px 1.7px 2.1px -0.4px hsl(var(--shadow-color) / 0.16),
+    1.5px 2.9px 3.7px -0.7px hsl(var(--shadow-color) / 0.16),
+    2.3px 4.7px 5.9px -1.1px hsl(var(--shadow-color) / 0.16),
+    3.7px 7.3px 9.2px -1.4px hsl(var(--shadow-color) / 0.16),
+    5.7px 11.3px 14.2px -1.8px hsl(var(--shadow-color) / 0.16),
+    8.5px 17.1px 21.5px -2.1px hsl(var(--shadow-color) / 0.16),
+    12.5px 25px 31.4px -2.5px hsl(var(--shadow-color) / 0.16);
+
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
