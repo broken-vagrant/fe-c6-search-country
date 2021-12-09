@@ -1,0 +1,40 @@
+.field-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  background-color: var(--clr-elements);
+  padding: .2em 1em;
+  border-radius: 4px;
+  box-shadow: var(--shadow-elevation-medium);
+  flex-basis: 35%;
+}
+.field-input input {
+  border: 0;
+  outline: 0;
+  padding: .5em;
+  flex-grow: 1;
+  color: var(--clr-input);
+}
+.field-input input:focus ~ fieldset {
+  border-color: var(--clr-input-active);
+}
+.field-input:hover > fieldset {
+  border-color: var(--clr-input-active);
+}
+.field-input fieldset {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  pointer-events: none;
+  border-color: transparent;
+}
+.left-adornment {
+  font-size: 1.2em;
+}
+@media (max-width: 375px) {
+  .field-input {
+    margin-bottom: 2rem;
+    flex-basis: 100%;
+  }
+}

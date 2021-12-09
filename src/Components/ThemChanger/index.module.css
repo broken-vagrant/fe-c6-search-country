@@ -1,0 +1,11 @@
+.theme-changer {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--clr-text);
+  cursor: pointer;
+}
+.theme-changer svg {
+  margin-right: .5em;
+}
