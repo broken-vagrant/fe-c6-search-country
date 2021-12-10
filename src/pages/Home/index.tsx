@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
 import Card from "../../Components/Card";
 import SearchInput from "../../Components/Form/SearchInput";
-import Select from "../../Components/Form/Select/Select";
+import Select from "../../Components/Form/Select";
 import Layout from "../../Components/Layout";
 import { IHomePageAction, IHomePageState } from "../../types";
 import classes from './index.module.css';

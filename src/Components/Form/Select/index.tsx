@@ -18,10 +18,8 @@ const Select = ({ dispatch }: { dispatch: Dispatch<IHomePageAction> }) => {
   }
   return (
     <div className={classes["field-select"]}>
-      <label htmlFor="region">
-        Filter by Region
-      </label>
       <select id="region" value={value} onChange={handleRegionChange}>
+        <option value="" hidden disabled selected>Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>
         <option value="Asia">Asia</option>

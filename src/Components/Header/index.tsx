@@ -1,4 +1,4 @@
-import ThemeChanger from '../ThemChanger';
+import ThemeToggle from '../ThemeToggle';
 import classes from './index.module.css';
 
 const Header = () => {
@@ -6,7 +6,7 @@ const Header = () => {
     <header className={classes.header}>
       <div className={classes.container}>
         <h1>Where in the world?</h1>
-        <ThemeChanger />
+        <ThemeToggle />
       </div>
     </header>
   )
