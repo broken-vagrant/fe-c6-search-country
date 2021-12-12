@@ -28,6 +28,7 @@
 
 .card__details {
   padding: 1em;
+  height: calc(100% - 45%);
 }
 
 .card__details h2 {

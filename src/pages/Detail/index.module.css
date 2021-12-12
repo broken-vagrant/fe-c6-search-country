@@ -1,0 +1,66 @@
+.wrapper {
+  padding: 2rem 0;
+  font-size: 1rem;
+}
+.button {
+  font-size: .8em;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  border: 0;
+  padding: .5em 2.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  margin: .8em;
+}
+.button svg {
+  margin-right: .5em;
+}
+.country {
+  margin-top: 3em;
+  display: flex;
+}
+.flag {
+  flex: 0 0 45%;
+}
+.flag img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.details {
+  margin-left: 5em;
+  flex: 0 0 calc(100% - 45%);
+  color: var(--clr-text);
+}
+.details h2 {
+  margin: 1em 0;
+}
+.dls {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+dl {
+  font-size: .9em;
+}
+ dt,dd {
+  display: inline-block;
+}
+dt::after {
+  content: ':';
+  padding-right: .2em;
+}
+dt {
+  font-weight: 600;
+}
+.borders {
+  margin-top: 2em;
+}
+.borders dd{
+  display: flex;
+  flex-flow: row wrap;
+}

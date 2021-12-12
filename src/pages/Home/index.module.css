@@ -12,9 +12,3 @@
     padding: 0 .5rem;
   }
 }
-.countries {
-  margin-top: 4rem;
-  display: grid;
-  gap: 4rem;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-}

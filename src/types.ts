@@ -11,25 +11,21 @@ export interface Country {
   population: number;
   name: {
     common: string
+    nativeName: {
+      [key: string]: {
+        common: string
+      }
+    }
   };
+  currencies: {
+    [key: string]: {
+      name: string,
+      symbol: string
+    }
+  }
   languages: {
     [key: string]: string
   };
   tld: string[];
   borders: string[];
-}
-
-export type IHomePageAction = {
-  type: 'new-search',
-  data?: Country[],
-  error?: string
-} | {
-  type: 'region-change',
-  region: string
-}
-
-export type IHomePageState = {
-  fetched: Country[],
-  filtered: Country[],
-  error: string,
 }

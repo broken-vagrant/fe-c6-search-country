@@ -1,29 +1,40 @@
-import { Dispatch, useState, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent, useContext } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { IHomePageAction } from '../../../types';
+import { CountryDispatchContext } from '../../../lib/CountryContext';
 import classes from './index.module.css';
 
-const SearchInput = ({ dispatch }: { dispatch: Dispatch<IHomePageAction> }) => {
+const SearchInput = () => {
   const [search, setSearch] = useState('');
+  const dispatch = useContext(CountryDispatchContext)!;
+
   const fetchCountry = async (name: string) => {
     const response = await fetch(`https://restcountries.com/v3.1/name/${name}`)
     if (response.status === 200) {
       const data = await response.json();
       dispatch({
         type: 'new-search',
+        searchKey: search,
         data: data
       })
     }
     else {
       dispatch({
         type: 'new-search',
+        searchKey: search,
         error: response.statusText
       })
     }
   };
   const handleSearch = async (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      await fetchCountry(search);
+      if (search) {
+        await fetchCountry(search);
+      }
+      else {
+        dispatch({
+          type: 'empty-search'
+        })
+      }
     }
   }
   return (
