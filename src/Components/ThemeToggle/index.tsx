@@ -5,7 +5,7 @@ import classes from './index.module.css';
 
 const ThemeToggle = () => {
 
-  const { colorMode, setColorMode } = useContext(ThemeContext)
+  const { colorMode, setColorMode } = useContext(ThemeContext);
   const isLight = colorMode === "light";
 
   return (

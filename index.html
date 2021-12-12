@@ -10,31 +10,7 @@
 </head>
 
 <body>
-  <script>
-    (function setTheme() {
-      let colorMode = 'light';
-      const persistedColorPreference = window.localStorage.getItem('color-mode');
-
-      const mql = window.matchMedia("(prefers-color-scheme: dark)");
-      const hasMediaQueryPreference = typeof mql.matches === "boolean";
-
-      if (typeof persistedColorPreference == "string") {
-        colorMode = persistedColorPreference;
-      } else {
-        colorMode = hasMediaQueryPreference ? "dark" : "light";
-      }
-
-      let body = document.body;
-
-      if (colorMode == "dark") {
-        body.classList.remove("light");
-        body.classList.add("dark");
-      } else {
-        body.classList.remove("dark");
-        body.classList.add("light");
-      }
-    })()
-  </script>
+  <script type="module" src="/src/scripts/theme.ts"></script>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

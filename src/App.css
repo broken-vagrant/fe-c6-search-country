@@ -61,7 +61,14 @@ p, h1, h2, h3, h4, h5, h6 {
   --vw-mobile-max: 375px;
   --vw-desktop-min: 1440px;
 
+  --clr-elements:  hsl(0,0%,100%);
+  --clr-text: hsl(200,15%,8%);
+  --clr-input: hsl(0,0%,52%);
+  --clr-bg: hsl(0,0%,98%);
+  --clr-input-active: rgb(248, 146, 12);
+  --shadow-button: 0 0 4px 2px lightgrey;
 
+  --shadow-color: 280deg 6% 76%;
   --shadow-elevation-low:
     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.17),
     0.4px 0.7px 0.9px -1.2px hsl(var(--shadow-color) / 0.17),
@@ -80,28 +87,12 @@ p, h1, h2, h3, h4, h5, h6 {
     5.7px 11.3px 14.2px -1.8px hsl(var(--shadow-color) / 0.16),
     8.5px 17.1px 21.5px -2.1px hsl(var(--shadow-color) / 0.16),
     12.5px 25px 31.4px -2.5px hsl(var(--shadow-color) / 0.16);
-
 }
 body {
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
   font-size: 18px;
-}
-body.light {
-  --clr-elements:  hsl(0,0%,100%);
-  --clr-text: hsl(200,15%,8%);
-  --clr-input: hsl(0,0%,52%);
-  --clr-bg: hsl(0,0%,98%);
-  --clr-input-active: rgb(248, 146, 12);
-  --shadow-color: 280deg 6% 76%;
-}
-body.dark {
-  --clr-elements:  hsl(209, 23%, 22%);
-  --clr-text: hsl(0,0%,100%);
-  --clr-input: hsl(0, 0%, 100%);
-  --clr-bg:  hsl(207, 26%, 17%);
-  --shadow-color: 0deg 0% 17%;
 
 }
 
@@ -122,4 +113,7 @@ main .container {
   max-width: var(--vw-desktop-min);
   margin: 0 auto;
   padding: 2e;
+}
+a{
+  text-decoration: none;
 }

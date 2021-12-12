@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP, THEME_VARS } from "../constants/theme";
 
 type ThemeProps = {
   colorMode: string;
@@ -10,28 +11,27 @@ export const ThemeContext = createContext<ThemeProps>({} as ThemeProps);
 export const ThemeProvider = ({ children }: any) => {
   const [colorMode, rawSetColorMode] = useState("");
   useEffect(() => {
-    const body = window.document.body;
-    rawSetColorMode(body.classList.contains("dark") ? "dark" : "light");
+    const root = window.document.documentElement;
+    const initalColorMode = root.style.getPropertyValue(INITIAL_COLOR_MODE_CSS_PROP);
+    rawSetColorMode(initalColorMode);
   }, []);
 
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue: "light" | "dark") {
-      const body = window.document.body;
+      const root = window.document.documentElement;
 
       // 1. Update React color-mode state
       rawSetColorMode(newValue);
 
       // 2. Update localStorage
-      localStorage.setItem('color-mode', newValue);
+      localStorage.setItem(COLOR_MODE_KEY, newValue);
 
-      // 3. Update each color
-      if (newValue == "dark") {
-        body.classList.remove("light");
-        body.classList.add("dark");
-      } else {
-        body.classList.remove("dark");
-        body.classList.add("light");
-      }
+      // 3. Update each theme variable
+      Object.entries(THEME_VARS).forEach(([name, valueByTheme]) => {
+        const cssVarName = `--${name}`;
+
+        root.style.setProperty(cssVarName, valueByTheme[newValue]);
+      })
     }
     return {
       colorMode,
