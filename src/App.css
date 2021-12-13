@@ -60,6 +60,7 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
   --vw-mobile-max: 375px;
   --vw-desktop-min: 1440px;
+  --vw-desktop-med: 1640px;
 
   --clr-elements:  hsl(0,0%,100%);
   --clr-text: hsl(200,15%,8%);
@@ -114,6 +115,7 @@ main .container {
   margin: 0 auto;
   padding: 2e;
 }
-a{
+a {
+  color: inherit;
   text-decoration: none;
 }

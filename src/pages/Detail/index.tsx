@@ -99,7 +99,7 @@ const Detail = () => {
                       <dt>Border Countries</dt>
                       <dd>
                         {
-                          country.borders.map((border) => <ButtonLike>{border}</ButtonLike>)
+                          country.borders.map((border, i) => <ButtonLike key={i}>{border}</ButtonLike>)
                         }
                       </dd>
                     </dl>

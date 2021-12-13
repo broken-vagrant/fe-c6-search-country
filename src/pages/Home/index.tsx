@@ -6,7 +6,6 @@ import classes from './index.module.css';
 
 const Home = () => {
 
-
   return (
     <Layout>
       <div className={classes.wrapper}>

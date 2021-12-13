@@ -20,13 +20,17 @@ export const THEME_VARS: {
     light: 'hsl(0,0%,98%)',
     dark: 'hsl(207, 26%, 17%)'
   },
+  'clr-link': {
+    light: 'hsl(0,0%,98%)',
+    dark: 'hsl(209, 23%, 22%)'
+  },
   'shadow-color': {
     light: '280deg 6% 76%',
     dark: '0deg 0% 17%'
   },
   'shadow-button': {
     light: '0 0 4px 2px lightgrey',
-    dark: '0 0 4px 2px rgba(18, 10, 7, 0.84)'
+    dark: '0 0 3px 1px rgba(18, 10, 7, 0.5)'
   }
 
 }

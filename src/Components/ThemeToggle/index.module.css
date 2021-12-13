@@ -5,6 +5,12 @@
   border: 0;
   color: var(--clr-text);
   cursor: pointer;
+  font-size: 1rem;
+}
+@media (max-width: 375px) {
+  .theme-changer {
+    font-size: .8rem;
+  }
 }
 .theme-changer svg {
   margin-right: .5em;

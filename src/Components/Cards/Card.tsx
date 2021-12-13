@@ -11,8 +11,8 @@ interface ICard {
 }
 const Card = ({ flag, country, population, region, capital, code }: ICard) => {
   return (
-    <Link to={`/country/${code}`} style={{ textDecoration: 'none' }}>
-      <div className={classes.card}>
+    <div className={classes.card}>
+      <Link to={`/country/${code}`} style={{ textDecoration: 'none' }}>
         <div className={classes.card__logo}>
           <img src={flag} alt={`The flag of ${country}`}></img>
         </div>
@@ -33,8 +33,8 @@ const Card = ({ flag, country, population, region, capital, code }: ICard) => {
             </div>
           </dl>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }
 

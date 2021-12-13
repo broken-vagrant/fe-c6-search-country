@@ -40,3 +40,8 @@
   pointer-events: none;
   border-color: transparent;
 }
+@media (max-width: 375px) {
+  .field-select {
+    font-size: .8rem;
+  }
+}
