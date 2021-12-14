@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './card.module.css';
 
@@ -9,7 +10,7 @@ interface ICard {
   capital: string;
   code: string;
 }
-const Card = ({ flag, country, population, region, capital, code }: ICard) => {
+const Card = React.memo(({ flag, country, population, region, capital, code }: ICard) => {
   return (
     <div className={classes.card}>
       <Link to={`/country/${code}`} style={{ textDecoration: 'none' }}>
@@ -36,6 +37,6 @@ const Card = ({ flag, country, population, region, capital, code }: ICard) => {
       </Link>
     </div>
   )
-}
+});
 
 export default Card;

@@ -10,7 +10,7 @@ const Cards = () => {
     <section className={classes.countries}>
       {
         state.filtered ? (
-          state.filtered.map((item) => <Card capital={item.capital && item.capital[0]} country={item.name.common} flag={item.flags.png} population={item.population} region={item.region} key={item.cioc} code={item.cioc} />)
+          state.filtered.map((item) => <Card capital={item.capital && item.capital[0]} country={item.name.common} flag={item.flags.png} population={item.population} region={item.region} key={item.name.common} code={item.cioc} />)
         ) : null
       }
     </section>

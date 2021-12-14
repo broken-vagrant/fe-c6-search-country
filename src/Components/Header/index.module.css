@@ -14,11 +14,10 @@
 }
 .header h1 {
   color: var(--clr-text);
-  font-size: 1.5em;
 }
 @media (max-width: 375px) {
   .header {
-    font-size: .6rem;
+    font-size: .9rem;
   }
   .header .container {
     padding: 2em 1em;
