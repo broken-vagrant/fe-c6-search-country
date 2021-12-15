@@ -1,4 +1,3 @@
-import Layout from "../../Components/Layout";
 import classes from './index.module.css';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import { ComponentPropsWithoutRef, useContext, useEffect, useState } from "react";
@@ -40,78 +39,76 @@ const Detail = () => {
   }, [])
 
   return (
-    <Layout className="detail">
-      <div className={classes.wrapper}>
-        <Link to="/" className={classes.button} >
-          <MdOutlineKeyboardBackspace />Back
-        </Link>
-        {
-          country && (
-            <section className={classes.country}>
-              <div className={classes.flag}>
-                <img src={country.flags.png}></img>
-              </div>
-              <div className={classes.details}>
-                <h2>
-                  {country.name.common}
-                </h2>
-                <div>
-                  <div className={classes.dls}>
-                    <dl>
-                      <div>
-                        <dt>Native name</dt>
-                        <dd>{country.name.nativeName[Object.keys(country.languages)[0]].common}</dd>
-                      </div>
-                      <div>
-                        <dt>Population</dt>
-                        <dd>{country.population}</dd>
-                      </div>
-                      <div>
-                        <dt>Region</dt>
-                        <dd>{country.region}</dd>
-                      </div>
-                      <div>
-                        <dt>Sub Region</dt>
-                        <dd>{country.subregion}</dd>
-                      </div>
-                      <div>
-                        <dt>Capital</dt>
-                        <dd>{country.capital}</dd>
-                      </div>
-                    </dl>
-                    <dl>
-                      <div>
-                        <dt>Top Level Domain</dt>
-                        <dd>{country.tld[0]}</dd>
-                      </div>
-                      <div>
-                        <dt>Currencies</dt>
-                        <dd>{country.currencies[Object.keys(country.currencies)[0]].name}</dd>
-                      </div>
-                      <div>
-                        <dt>Languages</dt>
-                        <dd>{Object.values(country.languages).join(', ')}</dd>
-                      </div>
-                    </dl>
-                  </div>
-                  <div className={classes.borders}>
-                    <dl>
-                      <dt>Border Countries</dt>
-                      <dd>
-                        {
-                          country.borders.map((border, i) => <ButtonLike key={i}>{border}</ButtonLike>)
-                        }
-                      </dd>
-                    </dl>
-                  </div>
+    <div className={classes.wrapper}>
+      <Link to="/" className={classes.button} >
+        <MdOutlineKeyboardBackspace />Back
+      </Link>
+      {
+        country && (
+          <section className={classes.country}>
+            <div className={classes.flag}>
+              <img src={country.flags.png}></img>
+            </div>
+            <div className={classes.details}>
+              <h2>
+                {country.name.common}
+              </h2>
+              <div>
+                <div className={classes.dls}>
+                  <dl>
+                    <div>
+                      <dt>Native name</dt>
+                      <dd>{country.name.nativeName[Object.keys(country.languages)[0]].common}</dd>
+                    </div>
+                    <div>
+                      <dt>Population</dt>
+                      <dd>{country.population}</dd>
+                    </div>
+                    <div>
+                      <dt>Region</dt>
+                      <dd>{country.region}</dd>
+                    </div>
+                    <div>
+                      <dt>Sub Region</dt>
+                      <dd>{country.subregion}</dd>
+                    </div>
+                    <div>
+                      <dt>Capital</dt>
+                      <dd>{country.capital}</dd>
+                    </div>
+                  </dl>
+                  <dl>
+                    <div>
+                      <dt>Top Level Domain</dt>
+                      <dd>{country.tld[0]}</dd>
+                    </div>
+                    <div>
+                      <dt>Currencies</dt>
+                      <dd>{country.currencies[Object.keys(country.currencies)[0]].name}</dd>
+                    </div>
+                    <div>
+                      <dt>Languages</dt>
+                      <dd>{Object.values(country.languages).join(', ')}</dd>
+                    </div>
+                  </dl>
                 </div>
-
+                <div className={classes.borders}>
+                  <dl>
+                    <dt>Border Countries</dt>
+                    <dd>
+                      {
+                        country.borders.map((border, i) => <ButtonLike key={i}>{border}</ButtonLike>)
+                      }
+                    </dd>
+                  </dl>
+                </div>
               </div>
-            </section>
-          )
-        }
-      </div>
-    </Layout>
+
+            </div>
+          </section>
+        )
+      }
+    </div>
   )
 }
 
