@@ -6,10 +6,10 @@ import classes from './index.module.css';
 const Home = () => {
   return (
     <div className={classes.wrapper}>
-      <section className={classes.controls}>
+      <div className={classes.controls}>
         <SearchInput />
         <Select />
-      </section>
+      </div>
       <Cards />
     </div>
   )
