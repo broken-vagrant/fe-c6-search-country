@@ -25,16 +25,18 @@ const Select = () => {
     }
   }
   return (
-    <div className={classes["field-select"]}>
-      <select id="region" value={value} onChange={handleRegionChange}>
-        <option value="ps">Filter by Region</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
-      <fieldset aria-hidden="true"></fieldset>
+    <div className={classes.form__field}>
+      <label htmlFor="filter-by-region">Filter by Region </label>
+      <div className={classes["field-select"]}>
+        <select id="filter-by-region" value={value} onChange={handleRegionChange}>
+          <option value="Africa">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <fieldset aria-hidden="true"></fieldset>
+      </div>
     </div>
   )
 }
