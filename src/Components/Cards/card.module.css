@@ -9,10 +9,16 @@
   box-shadow: var(--shadow-elevation-medium);
   display: inline-block;
 }
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 375px) {
   .card {
     margin: 0 auto;
-    font-size: .9rem;
+    font-size: 0.83rem;
   }
 }
 
@@ -38,14 +44,15 @@
   margin: 1rem 0;
 }
 .card__details dl {
-  font-size: .9em;
+  font-size: 0.9em;
 }
-.card__details dt,dd {
+.card__details dt,
+dd {
   display: inline-block;
 }
 .card__details dt::after {
-  content: ':';
-  padding-right: .2em;
+  content: ":";
+  padding-right: 0.2em;
 }
 .card__details dt {
   font-weight: 600;

@@ -5,11 +5,10 @@
   color: var(--clr-text);
 }
 .field__body {
-
 }
 .field__footer {
-  padding: .2em;
-  font-size: .8rem;
+  padding: 0.2em;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 .field-input {
@@ -24,7 +23,7 @@
 .field-input input {
   border: 0;
   outline: 0;
-  padding-left: .5em;
+  padding-left: 0.5em;
   line-height: 2.5em;
   flex-grow: 1;
   background-color: inherit;
@@ -53,8 +52,7 @@
 }
 @media (max-width: 375px) {
   .form__field {
-    margin-bottom: 2rem;
     flex-basis: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }

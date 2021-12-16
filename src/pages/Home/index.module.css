@@ -4,11 +4,12 @@
 .controls {
   display: flex;
   flex-flow: row wrap;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
 }
 @media (max-width: 375px) {
   .wrapper {
-    padding: 2rem .5rem;
+    padding: 2rem 0.5rem;
   }
 }
