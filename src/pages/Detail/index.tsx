@@ -1,18 +1,18 @@
 import classes from './index.module.css';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
-import { ComponentPropsWithoutRef, useContext, useEffect, useState } from "react";
-import { CountryContext, CountryDispatchContext } from "../../lib/CountryContext";
+import { ComponentPropsWithoutRef, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Country } from "../../types";
+import { Country } from "@/types";
 import { Link } from "react-router-dom";
+import { useCountryContext, useCountryDispatchContext } from '@/lib/CountryContext';
 
 const ButtonLike = (props: ComponentPropsWithoutRef<'button'>) => (
   <button className={classes.button}>{props.children}</button>
 )
 const Detail = () => {
 
-  const state = useContext(CountryContext)!;
-  const dispatch = useContext(CountryDispatchContext)!;
+  const state = useCountryContext();
+  const dispatch = useCountryDispatchContext();
 
   const [country, setCountry] = useState<Country | null>(null);
   const { code } = useParams();

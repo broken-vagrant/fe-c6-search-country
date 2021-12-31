@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP, THEME_VARS } from "../constants/theme";
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP, THEME_VARS } from "@/constants/";
 
 type ThemeProps = {
   colorMode: string;

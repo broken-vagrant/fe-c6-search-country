@@ -1,5 +1,5 @@
-import { createContext, Dispatch, ReactNode, useCallback, useEffect, useReducer } from "react";
-import { Country } from "../types";
+import { createContext, Dispatch, ReactNode, useCallback, useContext, useEffect, useReducer } from "react";
+import { Country } from "@/types";
 
 export type ICountryAction = {
   type: 'init',
@@ -20,6 +20,8 @@ export type ICountryAction = {
 } | {
   type: 'new-fetch',
   data: Country[]
+} | {
+  type: 'reset-to-init'
 }
 
 export type ICountryState = {
@@ -27,6 +29,7 @@ export type ICountryState = {
   init: Country[],
   fetched: Country[],
   filtered: Country[],
+  filteredRegion: string,
   error: string,
 }
 
@@ -35,12 +38,13 @@ const initialState = {
   fetched: [],
   init: [],
   filtered: [],
+  filteredRegion: '',
   error: '',
 }
 
-export const CountryContext = createContext<ICountryState>(initialState);
+const CountryContext = createContext<ICountryState>(initialState);
 
-export const CountryDispatchContext = createContext<Dispatch<ICountryAction> | null>(null);
+const CountryDispatchContext = createContext<Dispatch<ICountryAction> | null>(null);
 
 const defaultCountries = ['ger', 'usa', 'ind', 'can', 'mex', 'npl', 'chn', 'mar', 'prt', 'and'];
 
@@ -60,7 +64,7 @@ function countryReducer(state: ICountryState, action: ICountryAction) {
         return { ...state, error: action.error }
       }
       if (action.data) {
-        return { ...state, searchKey: action.searchKey, fetched: action.data, filtered: action.data }
+        return { ...state, searchKey: action.searchKey, fetched: action.data, filtered: action.data, filteredRegion: 'All' }
       }
       return state;
     case 'empty-search':
@@ -71,24 +75,28 @@ function countryReducer(state: ICountryState, action: ICountryAction) {
       }
       return state;
     case 'new-fetch':
-      state.init.concat(action.data); // intentionally mutate data, avoid render, just to save data and additional network requests
-      if (state.init.length > 10) {
+      state.init.concat(action.data); // intentionally mutate data, avoid render, just to use state as storage system and save additional network requests
+      if (state.init.length > 10) { // store max 10 items in initial cache holder
         state.init.splice(0, state.init.length - 10);
       }
       return state;
     case 'region-filter':
       const filteredCountries = state.fetched.filter((country) => country.region === action.region);
       return {
-        ...state, filtered: filteredCountries
+        ...state, filtered: filteredCountries, filteredRegion: action.region
       }
     case 'no-filter':
-      if (!state.searchKey) {
+      if (!state.searchKey) { // no search, return to init 
         return {
-          ...state, filtered: state.init, fetched: state.init
+          ...state, filtered: state.init, fetched: state.init, filteredRegion: 'All'
         }
       }
-      return {
+      return { // if searched, filter based on searched data
         ...state, filtered: state.fetched
+      }
+    case 'reset-to-init':
+      return {
+        ...state, filtered: state.init, fetched: state.init, filteredRegion: 'All', searchKey: ''
       }
     default:
       return state;
@@ -115,16 +123,6 @@ export const CountryProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [])
 
-  const refresh = useCallback(async () => {
-    if (state.init.length === 0) {
-      await fetchInfo();
-    }
-    else {
-      console.log('cache already uptodate!')
-    }
-  }, [])
-
-
   useEffect(() => {
     fetchInfo()
   }, []);
@@ -135,4 +133,20 @@ export const CountryProvider = ({ children }: { children: ReactNode }) => {
       </CountryDispatchContext.Provider>
     </CountryContext.Provider>
   )
+}
+
+export const useCountryContext = () => {
+  const state = useContext(CountryContext);
+  if (!state) {
+    throw new Error('CountryContext is not provided.')
+  }
+  return state;
+}
+
+export const useCountryDispatchContext = () => {
+  const dispatch = useContext(CountryDispatchContext)!;
+  if (!dispatch) {
+    throw new Error('CountryDispatchContext is not provided.')
+  }
+  return dispatch;
 }
