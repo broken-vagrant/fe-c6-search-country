@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 import { ThemeProvider } from './lib/ThemeContext';
 import { CountryProvider } from './lib/CountryContext';
-import Layout from './Components/Layout';
+import Layout from '@/components/Layout';
 
 
 function App() {

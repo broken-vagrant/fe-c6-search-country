@@ -1,4 +1,4 @@
-import { THEME_VARS, INITIAL_COLOR_MODE_CSS_PROP, COLOR_MODE_KEY } from '../constants/theme'
+import { THEME_VARS, INITIAL_COLOR_MODE_CSS_PROP, COLOR_MODE_KEY } from '../constants'
 
 (function setTheme() {
   let colorMode: 'light' | 'dark' = 'light';
