@@ -74,9 +74,11 @@ h6 {
 }
 
 :root {
-  --vw-mobile-max: 375px;
-  --vw-desktop-min: 1440px;
-  --vw-desktop-med: 1640px;
+  --vw-sm: 640px;
+  --vw-md: 768px;
+  --vw-lg: 1024px;
+  --vw-xl: 1280px;
+  --vw-2xl: 1536px;
 
   --clr-elements: hsl(0, 0%, 100%);
   --clr-text: hsl(200, 15%, 8%);
@@ -123,7 +125,7 @@ main {
   background-color: var(--clr-bg);
 }
 main .container {
-  max-width: calc(var(--vw-desktop-min) + 1rem);
+  max-width: calc(var(--vw-2xl) + 1rem);
   margin: 0 auto;
   padding: 0 0.5rem;
 }
@@ -131,3 +133,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* source: https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete?page=1&tab=votes#tab-top */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px var(--clr-elements) inset !important;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: var(--clr-text) !important;
+}
+

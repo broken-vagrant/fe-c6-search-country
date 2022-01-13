@@ -47,8 +47,8 @@
   pointer-events: none;
   border-color: transparent;
 }
-@media (max-width: 375px) {
+/* @media (max-width: 640px) {
   .form__field {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
-}
+} */

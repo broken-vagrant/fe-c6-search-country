@@ -9,16 +9,10 @@
   box-shadow: var(--shadow-elevation-medium);
   display: inline-block;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .card {
     margin: 0 auto;
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 375px) {
-  .card {
-    margin: 0 auto;
-    font-size: 0.83rem;
+    /* font-size: 0.9rem; */
   }
 }
 
@@ -44,7 +38,7 @@
   margin: 1rem 0;
 }
 .card__details dl {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .card__details dt,
 dd {

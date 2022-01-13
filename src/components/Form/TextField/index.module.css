@@ -64,9 +64,8 @@
     transform: rotateZ(360deg);
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 640px) {
   .form__field {
     flex-basis: 100%;
-    font-size: 0.8rem;
   }
 }

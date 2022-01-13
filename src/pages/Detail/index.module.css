@@ -65,15 +65,24 @@ dt {
   gap: 1em;
   margin-top: .5em;
 }
-@media (max-width: 375px) {
+@media (max-width: 1024px) {
   .country {
     flex-direction: column;
+    align-items: center;
   }
-  .wrapper {
-    padding: 2em 1em;
+  .flag {
+    width: 50%;
   }
   .details {
     margin: 0;
+  }
+}
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 2em 1em;
+  }
+  .flag {
+    width: 70%;
   }
   .details dl + dl {
     margin-top: 2em;
