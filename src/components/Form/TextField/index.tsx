@@ -2,7 +2,7 @@ import React, { ComponentPropsWithRef } from 'react';
 import { AiOutlineLoading3Quarters, AiOutlineSearch } from 'react-icons/ai';
 import classes from './index.module.css';
 
-interface TextFieldProps extends ComponentPropsWithRef<'input'> {
+interface TextFieldProps extends ComponentPropsWithoutRef<'input'> {
   error?: string;
   loading?: boolean;
   classes?: {
